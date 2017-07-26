@@ -77,7 +77,12 @@
 	</dependencies>
 	
    <build>
-
+	  <testResources>
+         <testResource>
+            <directory>${basedir}/src/main/resources/stories</directory>
+            <filtering>false</filtering>
+         </testResource>
+      </testResources>
       <plugins>    
       	<plugin>
             <groupId>org.jbehave</groupId>
