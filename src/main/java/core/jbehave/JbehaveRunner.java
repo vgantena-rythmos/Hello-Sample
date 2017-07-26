@@ -64,7 +64,7 @@ public class JbehaveRunner extends JUnitStories {
     	    }
     	} 
      	
-        return new InstanceStepsFactory(configuration(), new MySteps(), new RestfulSteps(), new StorySteps());
+        return new InstanceStepsFactory(configuration(), results);
     }
  
    
