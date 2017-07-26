@@ -20,6 +20,10 @@ import org.jbehave.core.reporters.StoryReporterBuilder;
 import org.jbehave.core.steps.InjectableStepsFactory;
 import org.jbehave.core.steps.InstanceStepsFactory;
 
+import core.steps.MySteps;
+import core.steps.RestfulSteps;
+import core.steps.StorySteps;
+
 
 public class JbehaveRunner extends JUnitStories {
 	 
@@ -60,7 +64,7 @@ public class JbehaveRunner extends JUnitStories {
     	    }
     	} 
      	
-        return new InstanceStepsFactory(configuration(), results);
+        return new InstanceStepsFactory(configuration(), new MySteps(), new RestfulSteps(), new StorySteps());
     }
  
    
