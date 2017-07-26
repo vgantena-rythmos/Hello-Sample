@@ -10,10 +10,10 @@
 		<maven.test.failure.ignore>true</maven.test.failure.ignore>
 		<maven.build.timestamp.format>yyyyMMdd-HHmm-z</maven.build.timestamp.format>
 		<!-- JBehave -->
-		<jbehave.version>4.0.5</jbehave.version>
+		<jbehave.version>3.8</jbehave.version>
 		
 		<!-- Test -->
-		<junit.version>4.12</junit.version>
+		<junit.version>4.11</junit.version>
 
 	</properties>
 
@@ -43,8 +43,8 @@
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
 		</dependency>
-		
-		<!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-all -->
+	
+			<!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-all -->
 		<dependency>
 		    <groupId>org.hamcrest</groupId>
 		    <artifactId>hamcrest-all</artifactId>
@@ -73,23 +73,16 @@
 		    <artifactId>jackson-databind</artifactId>
 		    <version>2.9.0.pr4</version>
 		</dependency>
-				
-				
-	</dependencies>
 		
+	</dependencies>
+	
    <build>
-      <testResources>
-         <testResource>
-            <directory>${basedir}/src/main/resources/stories</directory>
-            <filtering>false</filtering>
-         </testResource>
-      </testResources>
-      <plugins>
-                  
-         <plugin>
+
+      <plugins>    
+      	<plugin>
             <groupId>org.jbehave</groupId>
             <artifactId>jbehave-maven-plugin</artifactId>
-            <version>4.0.5</version>
+            <version>${jbehave.version}</version>
             <executions>
                <execution>
                   <id>unpack-view-resources</id>
@@ -99,8 +92,29 @@
                   </goals>
                </execution>
             </executions>
-         </plugin>
+         </plugin>    
+         <plugin>
+		    <groupId>org.jbehave</groupId>
+		    <artifactId>jbehave-maven-plugin</artifactId>
+		    <version>${jbehave.version}</version>
+		    
+		    <executions>
+		        <execution>
+		            <id>run-stories-as-embeddables</id>
+		            <phase>integration-test</phase>
+		            <configuration>
+					      
+		                <includes>
+		                    <include>**/*Runner.java</include>
+		                </includes>
+		                
+		            </configuration>
+		            <goals>
+		                <goal>run-stories-as-embeddables</goal>
+		            </goals>
+		        </execution>
+		    </executions>
+		</plugin>
       </plugins>
-   </build>
-  
+   </build>   
 </project>

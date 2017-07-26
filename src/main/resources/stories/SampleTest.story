@@ -1,4 +1,7 @@
-Sample story
+Meta:
+@testid 1002
+@sprint 001
+@globalname sbux
 
 Narrative:
 In order to communicate effectively to the business some functionality
@@ -6,6 +9,11 @@ As a development team
 I want to use Behaviour-Driven Development
 					 
 Scenario:  A scenario is a collection of executable steps of different type
-Given step represents a precondition to an event
+Given step represents a precondition to an event <UserName>
 When step represents the occurrence of the event
 Then step represents the outcome of the event
+
+
+Examples:
+|UserName|Password|
+|vgantena|xxxxxxxx|

@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.Random;
 
 import org.jbehave.core.annotations.Given;
+import org.jbehave.core.annotations.Named;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 
@@ -27,24 +28,9 @@ public class StorySteps {
         counter++;
     }
  
-    @Then("the value of the counter must be 1 greater than previous value")
-    public void theValueOfTheCounterMustBe1Greater() {
-    	System.out.println("Counter #" +counter + "  PreviousValue #" + previousValue);
-        assertTrue(1 == counter - previousValue);
+    @Then("the value of the counter must be $number greater than previous value")
+    public void theValueOfTheCounterMust(@Named("number")int number) {
+    	System.out.println("#validate Counter: After IncreaseCounter#" +counter + ", PreviousValue #" + previousValue);
+        assertTrue(number == counter - previousValue);
     }
-    
-    @When("step represents the occurrence of the event")
-	public void whenStepRepresentsTheOccurrenceOfTheEvent(){
-		 System.out.println("Step-------------------One");
-	}
-	
-	@Given("step represents a precondition to an event")
-	public void givenStepRepresentsAPreconditionToAnEvent(){
-		 System.out.println("Step-------------------Two");
-	}
-	
-	@Then("step represents the outcome of the event")
-	public void thenStepRepresentsTheOutcomeOfTheEvent(){
-		 System.out.println("Step-------------------Three");
-	}
 }
