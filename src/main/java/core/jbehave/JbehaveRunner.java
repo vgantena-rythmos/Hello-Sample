@@ -38,6 +38,7 @@ public class JbehaveRunner extends JUnitStories {
     	List<Object> results = new ArrayList<Object>();
 
     	File[] files = new File("./src/main/java/core/steps").listFiles(); 
+    	System.out.println("MyList of File(s) : " + files);
     	Object obj=null;
     	for (File file : files) {
     	    if (file.isFile()) {
