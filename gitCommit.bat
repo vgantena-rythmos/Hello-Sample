@@ -3,7 +3,7 @@ set GIT_PATH="C:\Program Files\Git\bin\git.exe"
 set path=C:\Program Files\Git\bin
 SET CurrentDir=%~dp0
 git add .
-git commit -am "made changes"
+git commit -am "made changes with new version...!"
 git push
 echo Press Enter...
 pause
