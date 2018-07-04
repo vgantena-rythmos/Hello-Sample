@@ -1,4 +1,4 @@
-#Test Case Design, guidelines & Standards
+# Test Case Design, guidelines & Standards
 Test Case writing is a major activity and considered as one of the most important part of testing. It is used by the Testing team, development team as well as the management, it means that test cases clarify what needs to be done to test a system.
 
 ### Test Case Design
